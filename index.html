@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" >
+    </head>
+    
+    
+    
+    <body>
+        <div class="back">
+            <div class="image_container">
+                <img  class = 'team_logo' src="9-pandas.png" style="margin-left: 5%;"> 
+           
+                <!-- <span class="percents" id="per1" > 0% </span> -->
+            </div>
+            
+            <div class="percents" id="score1"  style="margin-left: 30px;">
+    
+            </div>
+            <div style="display: inline-block">
+                <input id='votes' max="130" min="-30" type="range"  value="50"  title="123"/>
+                
+            </div>
+           
+            <div class="percents" id="score2" style="margin-left: -100px;">
+            </div>
+
+            <div class="image_container">
+                <img src="forward.png" style="margin-left: 33%;">
+                 <!-- <span  class="percents" id="per2"> 0% </span> -->
+            </div>
+           
+
+        </div>
+        <div>
+            <img src="twitch.png">
+        </div>
+        <div class="twitch">
+            
+        </div>
+    </body>
+
+    <script>
+        let range = document.getElementById('votes')
+        let s1 = document.getElementById('score1')
+        let s2 = document.getElementById('score2')
+
+        s1.textContent =  Number(range.value)+ '%'
+        s2.textContent = 100 - range.value+ '%'
+        
+
+        range.oninput= function(){
+            if ((Number(range.value) > 0) && (Number(range.value) < 100)){
+                s1.textContent =  Number(range.value) + '%'
+                s2.textContent = 100 - range.value  + '%'
+
+            }
+        }
+
+
+
+    </script>
+
+
+
+</html>
