@@ -1,0 +1,82 @@
+/* #E94B53 */
+/* #3B57E2 */
+
+@font-face {
+    font-family: 'Gothamn';
+    src: url(/gotham_bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.percents{
+    display: inline-block;
+    position: absolute;
+    margin-top: 50px;
+    z-index: 10;
+    color: white;
+    font-size: 38px;
+    font-family: 'Gothamn';
+    text-align: justify;
+
+    /* font-weight: normal; */
+
+}
+
+.back{
+    background-image: url(back.png); 
+    width: fit-content;
+    height: 150px;
+    border-radius: 100px;
+ 
+}
+
+.image_container{
+    /* background-color: rebeccapurple; */
+    display: inline-block;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-top: 13px;
+    width: 200px; 
+    /* position: absolute; */
+}
+
+
+
+.team_logo{ 
+
+    width: 125px;
+    height: 125px;
+    background-color: black;
+    border-radius: 100px;
+}
+
+input[type="range"] {
+    position: relative;
+
+    outline: 0;
+    border: 0;
+    /* border-radius: 500px; */
+    /* border: 1px solid black; */
+    transform: skewX(-20deg);
+    width: 590px;
+    max-width: 100%;
+    margin: 0px 0 0px;
+    transition: box-shadow 0.2s ease-in-out ;
+    overflow: hidden;
+    height: 125px;
+    -webkit-appearance: none;
+    background-color: #E94B53;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 40px;
+    height: 125px;
+    -webkit-appearance: none;
+    /* cursor: ew-resize; */
+    background: #fff;
+    box-shadow: -1000px 0px 0 980px #3B57E2 , inset 0 0 0 40px white;
+
+    transition: box-shadow 0.2s ease-in-out;
+    /* position: relative; */
+}
+
