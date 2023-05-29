@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
 </head>
 
@@ -10,33 +11,22 @@
     <div class='tx' id='info' style="text-align: center;">
         ПРОГНОЗ ЗРИТЕЛЕЙ
     </div>
-    <br>
-    <div class='tx' id='info' style="text-align: center; margin-top: 10px;">
+    <div class='tx' id='info' style="text-align: center;">
         TWITCH.TV/RUSCYBERLEAGUE
     </div>
-    <br>
-    <div class="back" style="margin-top: 20px;">
-        <div class="image_container">
-            <img class='team_logo' src="9-pandas.png" style="margin-left: 5%;">
-        </div>
-
-        <div class="percents" id="score1" style="margin-left: 50px;"></div>
-        <div style="display: inline-block; margin-left: 1%;">
-            <input id='votes' max="130" min="-30" type="range" value="50" title="123" />
-        </div>
-
+    <div class="back">
+        <img class='team_logo' src="9-pandas.png">
+        <div class="percents" id="score1" style="margin-left: 30px;"></div>
+        <input id='votes' max="130" min="-30" type="range" value="50" title="123">
         <div class="percents" id="score2" style="margin-left: -100px;"></div>
-
-        <div class="image_container" style="margin-left: 5px;">
-            <img class='team_logo' src="forward.png">
-        </div>
+        <img class='team_logo' src="forward.png" />
 
     </div>
     <div class='tx' id='info'>
         <span style="margin-left: 45px;" id="points_left">
             10k
         </span>
-        <span style="margin-left: 820px;" id ='points_right'>
+        <span style="margin-left: 820px;" id='points_right'>
             10k
         </span>
 
@@ -53,7 +43,7 @@
     s2.textContent = 100 - range.value + '%'
 
 
-    range.oninput = function () {
+    range.oninput = function() {
         if ((Number(range.value) > 0) && (Number(range.value) < 100)) {
             s1.textContent = Number(range.value) + '%'
             s2.textContent = 100 - range.value + '%'
@@ -66,37 +56,38 @@
             }
         }
     }
-    
-    function animateBar(l, r){
-        old_l  = point_left.textContent
-        old_r  = points_right.textContent
-        
+
+    function animateBar(l, r) {
+        old_l = point_left.textContent
+        old_r = points_right.textContent
+
     }
 
-    function updateValues(l, r){
-        
-            point_left.textContent = l + 'k'
-            points_right.textContent = r + 'k'
-            range.value = Math.round(l/(l + r) * 100)
-            // console.log(Math.round(l/(l + r)))
-            s1.textContent = Number(range.value) + '%'
-            s2.textContent = 100 - range.value + '%'
+    function updateValues(l, r) {
 
-            setTimeout(() => {
-            
+        point_left.textContent = l + 'k'
+        points_right.textContent = r + 'k'
+        range.value = Math.round(l / (l + r) * 100)
+            // console.log(Math.round(l/(l + r)))
+        s1.textContent = Number(range.value) + '%'
+        s2.textContent = 100 - range.value + '%'
+
+        setTimeout(() => {
+
         }, "100")
 
-        
+
     }
 
 
     let point_left = document.getElementById('points_left')
     let points_right = document.getElementById('points_right')
-    function myLoop(){
+
+    function myLoop() {
         setTimeout(() => {
             l = Math.round(Math.random() * 100)
             r = Math.round(Math.random() * 100)
-            updateValues(l,r)
+            updateValues(l, r)
             myLoop()
         }, "2000")
     }
