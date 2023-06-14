@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Set height to match parent container */
+}
+
+.team_logo {
+    /* size:initial; */
+    z-index: 1;
+    width: calc(352px);
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Set height to match parent container */
+}
+
+input[type="range"] {
+    width: calc(1526px - 315px*2);
+    overflow: hidden;
+    height: 200px;
+    -webkit-appearance: none;
+    transform: skewX(-10deg);
+    background-color: #E94B53;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 40px;
+    height: 350px;
+    -webkit-appearance: none;
+    /* cursor: ew-resize; */
+    background: #fff;
+    box-shadow: -1000px 0px 0 980px #3B57E2, inset 0 0 0 40px white;
+    transition: box-shadow 0.2s ease-in-out;
+    /* position: relative; */
+}
